@@ -21,12 +21,18 @@ function PullRelease({bird}: {bird: string}) {
   </animated.div>
 }
 
+const BirdGrid = () => {
+  return (
+    <div className='grid md:grid-cols-3 w-full h-full overflow-auto gap-10 place-items-center p-10'>
+      {birds.map(bird => <PullRelease key={bird} bird={bird} />)}
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className='h-[100dvh] overflow-hidden bg-black text-white'>
-      <div className='grid md:grid-cols-3 w-full h-full overflow-auto gap-10 place-items-center p-10'>
-        {birds.map(bird => <PullRelease key={bird} bird={bird} />)}
-      </div>
+      <BirdGrid />
     </div>
   )
 }
