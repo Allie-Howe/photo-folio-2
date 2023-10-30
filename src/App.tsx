@@ -1,6 +1,7 @@
 import { useSpring, animated } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
 import { birds } from './birds';
+import { range } from 'lodash';
 
 function PullRelease({bird}: {bird: string}) {
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }))
@@ -29,12 +30,22 @@ const BirdGrid = () => {
   );
 }
 
+const word = 'photography';
+
 function App() {
-  return (
+  return <>
     <div className='h-[100dvh] overflow-hidden bg-black text-white'>
+      <div className='flex justify-center'>
+      <div className='flex flex-col max-w-md'>
+        <p id='name' className='m-4 text-center text-8xl font-serif'>keila</p>
+        <div className='flex justify-evenly text-gray-400 -mt-3 mb-3 -mx-8'>
+          {range(word.length).map(i => <p key={i}>{word[i]}</p>)}
+        </div>
+      </div>
+      </div>
       <BirdGrid />
     </div>
-  )
+  </>
 }
 
 export default App
