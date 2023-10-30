@@ -15,9 +15,9 @@
   width: 10px;
   height: 5px;
   background-color: aqua;
-  top: .2em;
-  left: .7em;
-  transform: rotateZ(-30deg);
+  top: .22em;
+  left: .72em;
+  transform: rotateZ(-40deg);
   animation: shimmer 4s infinite;
   background-image: linear-gradient(90deg, #AAA 20%, #FFF 50%, #AAA 80%);
   background-size: 400%;
