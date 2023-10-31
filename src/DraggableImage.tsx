@@ -17,6 +17,6 @@ export function DraggableImage({file}: {file: FileResolutions}) {
 
   // Bind it to a component
   return <animated.div {...bind()} style={{ x, y }} className={'touch-none w-full h-full'}>
-    <div className='rounded-2xl w-full aspect-[3/2] bg-[length:100%] bg-center' style={{ backgroundImage: `url('${file.low}')`}} />
+    <div className='rounded-md w-full aspect-[3/2] bg-[length:100%] bg-center' style={{ backgroundImage: `url('${file.low}')`}} />
   </animated.div>
 }

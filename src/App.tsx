@@ -10,10 +10,10 @@ function App() {
 
   return <>
     <div className='h-[100dvh] overflow-hidden bg-black text-white'>
-      <div className='flex flex-col justify-center items-center'>
+      <div className='flex flex-col justify-center items-center m-4'>
         <div className='flex justify-center'>
           <div className='flex flex-col max-w-md'>
-            <p id='name' className='m-4 text-center text-8xl font-serif'>keila</p>
+            <p id='name' className='text-center text-8xl font-serif'>keila</p>
             <div className='flex justify-evenly text-gray-400 -mt-3 mb-3 -mx-8'>
               {range(word.length).map(i => <p key={i}>{word[i]}</p>)}
             </div>
