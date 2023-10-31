@@ -1,10 +1,10 @@
 import { useSpring, animated } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
-import { birds } from './birds';
+import { FileResolutions, birds } from './birds';
 import { range, values } from 'lodash';
 import { useState } from 'react';
 
-function PullRelease({bird}: {bird: string}) {
+function PullRelease({bird}: {bird: FileResolutions}) {
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }))
 
   // Set the drag hook and define component movement based on gesture data
@@ -19,14 +19,14 @@ function PullRelease({bird}: {bird: string}) {
 
   // Bind it to a component
   return <animated.div {...bind()} style={{ x, y }} className={'touch-none w-full h-full'}>
-    <div className='rounded-2xl w-full aspect-[3/2] bg-contain bg-center' style={{ backgroundImage: `url('${bird}')` }} />
+    <div className='rounded-2xl w-full aspect-[3/2] bg-contain bg-center' style={{ backgroundImage: `url('${bird.low}')` }} />
   </animated.div>
 }
 
 const BirdGrid = () => {
   return (
     <div className='grid md:grid-cols-3 w-full h-full overflow-auto gap-10 place-items-center p-10'>
-      {birds.map(bird => <PullRelease key={bird} bird={bird} />)}
+      {birds.map(bird => <PullRelease key={bird.low} bird={bird} />)}
     </div>
   );
 }
