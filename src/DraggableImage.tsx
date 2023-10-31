@@ -1,5 +1,5 @@
 import { useSpring, animated } from '@react-spring/web';
-import { FileResolutions } from './files/birds';
+import { FileResolutions } from './files';
 import { useDrag } from '@use-gesture/react';
 
 export function DraggableImage({file}: {file: FileResolutions}) {
@@ -17,6 +17,6 @@ export function DraggableImage({file}: {file: FileResolutions}) {
 
   // Bind it to a component
   return <animated.div {...bind()} style={{ x, y }} className={'touch-none w-full h-full'}>
-    <div className='rounded-2xl w-full aspect-[3/2] bg-contain bg-center' style={{ backgroundImage: `url('${file.low}')` }} />
+    <div className='rounded-2xl w-full aspect-[3/2] bg-[length:100%] bg-center' style={{ backgroundImage: `url('${file.low}')`}} />
   </animated.div>
 }
