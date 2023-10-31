@@ -23,11 +23,7 @@ import bird9_h from '../assets/birds/high/bird9.webp'
 import bird11_h from '../assets/birds/high/bird11.webp'
 import bird12_h from '../assets/birds/high/bird12.webp'
 import bird13_h from '../assets/birds/high/bird13.webp'
-
-export interface FileResolutions {
-  low: string;
-  high: string;
-}
+import { FileResolutions } from '.'
 
 export const birds: FileResolutions[] = [
   {low: bird1, high: bird1_h},
