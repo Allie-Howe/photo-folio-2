@@ -1,5 +1,5 @@
 import { useSpring, animated } from '@react-spring/web';
-import { FileResolutions } from './birds';
+import { FileResolutions } from './files/birds';
 import { useDrag } from '@use-gesture/react';
 
 export function DraggableImage({file}: {file: FileResolutions}) {

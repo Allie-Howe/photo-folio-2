@@ -1,7 +1,8 @@
-import { birds } from './birds';
-import { range, values } from 'lodash';
+import { birds } from './files/birds';
+import { keys, range } from 'lodash';
 import { useState } from 'react';
 import { ImageGrid } from './ImageGrid';
+import { selections } from './files';
 
 const word = 'photography';
 
@@ -26,22 +27,16 @@ function App() {
 
 export default App
 
-const selections = {
-  birds: 'birds',
-  birds1: 'birds',
-  birds2: 'birds',
-} as const
-
 const SelectionArea = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return <div className='flex gap-5'>
-    {values(selections).map((v, i) => (
+    {keys(selections).map((k, i) => (
       <p
         style={{color: i === selectedIndex ? '#FFF' : '#AAA', cursor: 'pointer'}}
         onClick={() => setSelectedIndex(i)}
       >
-        {v}
+        {k}
       </p>
     ))}
   </div>

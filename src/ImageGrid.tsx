@@ -1,5 +1,5 @@
 import { DraggableImage } from './DraggableImage';
-import { FileResolutions } from './birds';
+import { FileResolutions } from './files/birds';
 
 export const ImageGrid = ({files}: {files: FileResolutions[]}) => {
 return (
