@@ -10,7 +10,7 @@ function PullRelease({bird}: {bird: string}) {
   // Set the drag hook and define component movement based on gesture data
   const bind = useDrag(({ last, movement: [mx, my] }) => {
     const down = !last;
-    api.start({ x: down ? mx : 0, y: down ? my : 0, immediate: down, config: {
+    api.start({ x: down ? mx : 0, y: down ? my : 0, config: {
       mass: 1,
       friction: 12,
       tension: 500,
@@ -19,7 +19,7 @@ function PullRelease({bird}: {bird: string}) {
 
   // Bind it to a component
   return <animated.div {...bind()} style={{ x, y }} className={'touch-none w-full h-full'}>
-    <div className='rounded-2xl w-full aspect-[3/2] bg-contain bg-center scale-100' style={{ backgroundImage: `url('${bird}')` }} />
+    <div className='rounded-2xl w-full aspect-[3/2] bg-contain bg-center' style={{ backgroundImage: `url('${bird}')` }} />
   </animated.div>
 }
 
