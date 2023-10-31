@@ -1,12 +1,13 @@
-import { birds } from './files/birds';
-import { keys, range } from 'lodash';
-import { useState } from 'react';
+import { keys, range, values } from 'lodash';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { ImageGrid } from './ImageGrid';
 import { selections } from './files';
 
 const word = 'photography';
 
 function App() {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   return <>
     <div className='h-[100dvh] overflow-hidden bg-black text-white'>
       <div className='flex flex-col justify-center items-center'>
@@ -18,18 +19,20 @@ function App() {
             </div>
           </div>
         </div>
-          <SelectionArea />
+          <SelectionArea selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
       </div>
-      <ImageGrid files={birds} />
+      {values(selections).map((v, i) => i === selectedIndex ? <ImageGrid files={v} /> : null)}
     </div>
   </>
 }
 
 export default App
 
-const SelectionArea = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
+interface SelectionAreaProps {
+  selectedIndex: number,
+  setSelectedIndex: Dispatch<SetStateAction<number>>
+}
+const SelectionArea = ({selectedIndex, setSelectedIndex}:SelectionAreaProps) => {
   return <div className='flex gap-5'>
     {keys(selections).map((k, i) => (
       <p

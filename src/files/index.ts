@@ -7,6 +7,6 @@ export interface FileResolutions {
 
 export const selections = {
   birds,
-  birds1: 'birds',
-  birds2: 'birds',
+  birds1: birds,
+  birds2: birds,
 } as const
