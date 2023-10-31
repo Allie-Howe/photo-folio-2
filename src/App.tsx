@@ -1,12 +1,12 @@
-import { birds } from './birds';
+import { FileResolutions, birds } from './birds';
 import { range, values } from 'lodash';
 import { useState } from 'react';
 import { DraggableImage } from './DraggableImage';
 
-const BirdGrid = () => {
+const ImageGrid = ({files}: {files: FileResolutions[]}) => {
   return (
     <div className='grid md:grid-cols-3 w-full h-full overflow-auto gap-10 place-items-center p-10'>
-      {birds.map(bird => <DraggableImage key={bird.low} file={bird} />)}
+      {files.map(bird => <DraggableImage key={bird.low} file={bird} />)}
     </div>
   );
 }
@@ -27,7 +27,7 @@ function App() {
         </div>
           <SelectionArea />
       </div>
-      <BirdGrid />
+      <ImageGrid files={birds} />
     </div>
   </>
 }
