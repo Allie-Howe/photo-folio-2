@@ -25,9 +25,9 @@ function App() {
           </div>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione dolor, nobis hic adipisci recusandae magnam fugiat eius facilis molestiae alias maxime architecto error accusantium animi consequuntur, quisquam quo debitis. </p>
           <Subheading text='my work' />
-          <SelectionArea selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
-          {values(selections).map((v, i) => i === selectedIndex ? <ImageGrid files={v} /> : null)}
         </Container>
+        <SelectionArea selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
+        {values(selections).map((v, i) => i === selectedIndex ? <ImageGrid files={v} /> : null)}
       </div>
     </div>
   </>
@@ -76,7 +76,7 @@ function Header() {
 
 
 function Container({children}: PropsWithChildren) {
-  return (<div className='flex flex-col gap-5 mx-5'>
+  return (<div className='flex flex-col gap-5 mx-5 xl:mx-80'>
     {children}
   </div>
   )
