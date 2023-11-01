@@ -90,6 +90,6 @@ function FullSizeImage({file, resetSelected}: FullSizeImageProps) {
         onClick={e => e.stopPropagation()}
         ref={ref}
       />
-      <p className='md:hidden absolute top-0 text-center w-full text-xl opacity-50' style={{ textShadow: '0 0 5px black' }}>pinch to zoom</p>
+      {/* <p className='md:hidden absolute top-0 text-center w-full text-xl opacity-50' style={{ textShadow: '0 0 5px black' }}>pinch to zoom</p> */}
   </div>;
 }
