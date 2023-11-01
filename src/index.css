@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: black;
+  margin: 0;
+}
+
 #name {
   position: relative;
 }
@@ -14,7 +19,6 @@
   content: "";
   width: 10px;
   height: 5px;
-  background-color: aqua;
   top: .22em;
   left: .72em;
   transform: rotateZ(-40deg);

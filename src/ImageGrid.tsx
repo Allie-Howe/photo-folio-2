@@ -8,8 +8,10 @@ export const ImageGrid = ({files}: {files: FileResolutions[]}) => {
   const selectedImageState = useState<string>();
 
 return (
-  <div className='grid md:grid-cols-3 w-full h-full overflow-auto gap-10 p-10'>
-    {files.map(bird => <DraggableImage key={bird.low} file={bird} selectedImageState={selectedImageState} />)}
+  <div className='pb-5'>
+    <div className='grid md:grid-cols-3 w-full h-full gap-10'>
+      {files.map(bird => <DraggableImage key={bird.low} file={bird} selectedImageState={selectedImageState} />)}
+    </div>
   </div>
 );
 }

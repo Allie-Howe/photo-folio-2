@@ -37,7 +37,7 @@ export function DraggableImage({file, selectedImageState}: DraggableImageProps) 
       />
     </animated.div>
     {/* TODO: This takes a long time to open - try to make it async and show a loading icon */}
-    <dialog open={selectedImage === file.low} className='select-none top-0 w-full h-[100dvh] bg-black text-white bg-opacity-70'>
+    <dialog open={selectedImage === file.low} className='fixed select-none top-0 w-full h-[100dvh] bg-black text-white bg-opacity-70'>
       <div className='flex flex-col w-full justify-center items-center h-full' onClick={resetSelected}>
         <div className='relative'>
           <img src={file.high} className={`max-h-[90dvh] max-w-[90dvw] ${ASPECT_RATIO}`} />
