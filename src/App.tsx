@@ -3,8 +3,11 @@ import { Dispatch, PropsWithChildren, SetStateAction, useState } from 'react';
 import { ImageGrid } from './ImageGrid';
 import { selections } from './files';
 import InstagramIcon from 'mdi-react/InstagramIcon'
-import TwitterIcon from 'mdi-react/TwitterIcon'
 import EmailOutlineIcon from 'mdi-react/EmailOutlineIcon'
+
+const URLS = {
+  insta: 'https://www.instagram.com/cairviecorvi/'
+}
 
 const word = 'photography';
 export const grey = '#AAA'
@@ -19,8 +22,9 @@ function App() {
         <Container>
           <Subheading text='about me' />
           <div className='flex justify-center gap-5'>
-            <InstagramIcon />
-            <TwitterIcon />
+            <a href={URLS.insta} target='_blank' rel='noreferrer noopener'>
+                <InstagramIcon />
+            </a>
             <EmailOutlineIcon />
           </div>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione dolor, nobis hic adipisci recusandae magnam fugiat eius facilis molestiae alias maxime architecto error accusantium animi consequuntur, quisquam quo debitis. </p>
