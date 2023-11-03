@@ -4,6 +4,7 @@ import { ImageGrid } from './ImageGrid';
 import { selections } from './files';
 import InstagramIcon from 'mdi-react/InstagramIcon'
 import EmailOutlineIcon from 'mdi-react/EmailOutlineIcon'
+import { useScrollPercentage } from './hooks/useScrollPercentage';
 
 const URLS = {
   insta: 'https://www.instagram.com/cairviecorvi/'
@@ -62,12 +63,13 @@ function Subheading({text}: {text: string}) {
 }
 
 function Header() {
+  const percentage = useScrollPercentage();
   return <>
   <div className='fixed top-0 right-0 left-0 bg-black flex flex-col justify-center items-center pt-4 shadow-[0_5px_15px_#FFF6]'>
     <div className='flex justify-center'>
       <div className='flex flex-col max-w-md'>
         <p id='name' className='text-center text-8xl font-serif'>keila</p>
-        <div className='flex justify-evenly text-gray-400 -mt-3 mb-3 -mx-8'>
+        <div className='flex justify-center text-gray-400 -mt-3 mb-3 -mx-8' style={{gap: `${5 + (percentage * 10)}px`}}>
           {range(word.length).map(i => <p key={i}>{word[i]}</p>)}
         </div>
       </div>
@@ -76,8 +78,6 @@ function Header() {
   <div className='my-40'></div>
   </>;
 }
-
-
 
 function Container({children}: PropsWithChildren) {
   return (<div className='flex flex-col gap-5 mx-5 xl:mx-80'>
