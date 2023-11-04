@@ -69,7 +69,7 @@ function Header() {
     <div className='flex justify-center'>
       <div className='flex flex-col max-w-md'>
         <p id='name' className='text-center text-8xl font-serif'>keila</p>
-        <div className='flex justify-center text-gray-400 -mt-3 mb-3 -mx-8' style={{gap: `${5 + (percentage * 10)}px`}}>
+        <div className='flex justify-center text-gray-400 -mt-3 mb-3 -mx-8' style={{gap: `${(1 - percentage) * 10}px`}}>
           {range(word.length).map(i => <p key={i}>{word[i]}</p>)}
         </div>
       </div>
